@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS groups;
 CREATE TABLE groups (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    group_name CHAR(4) UNIQUE NOT NULL
+    group_name VARCHAR(255) UNIQUE NOT NULL
     
 );
 
@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS students;
 CREATE TABLE students (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     student VARCHAR(255) UNIQUE NOT NULL,
-    group_id CHAR(4),
+    group_id INTEGER,
     FOREIGN KEY (group_id) REFERENCES groups(id)
     ON DELETE CASCADE
     ON UPDATE CASCADE
